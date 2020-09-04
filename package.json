@@ -1,0 +1,24 @@
+{
+  "name": "jenvcfg",
+  "version": "1.0.0",
+  "description": "Loads environment variables from a JSON file with comments in constant case",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quapo/jenvcfg.git"
+  },
+  "author": "Max Naegele",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quapo/jenvcfg/issues"
+  },
+  "homepage": "https://github.com/quapo/jenvcfg#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
