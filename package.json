@@ -1,6 +1,6 @@
 {
   "name": "jenvcfg",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Loads environment variables from a JSON file with comments in constant case",
   "main": "index.js",
   "types": "index.d.ts",
@@ -22,11 +22,11 @@
     "path": "^0.12.7"
   },
   "keywords": [
-      "jenvcfg",
-      "config",
-      "variables",
-      "JSON",
-      ".env",
-      "env"
+    "jenvcfg",
+    "config",
+    "variables",
+    "JSON",
+    ".env",
+    "env"
   ]
 }
