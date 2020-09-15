@@ -17,10 +17,7 @@
     "url": "https://github.com/quapo/jenvcfg/issues"
   },
   "homepage": "https://github.com/quapo/jenvcfg#readme",
-  "dependencies": {
-    "fs": "0.0.1-security",
-    "path": "^0.12.7"
-  },
+  "dependencies": {},
   "keywords": [
     "jenvcfg",
     "config",
