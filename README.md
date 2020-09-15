@@ -1,6 +1,6 @@
 # jenvcfg
 
-Jenvcfg combines the conecpts of using a .env or a JSON file for configuration. The config file is a JSON file (which allows comments) and is loaded into the [user environment (process.env)](https://nodejs.org/api/process.html#process_process_env) like a .env file. The JSON object gets flattened then each key is converted into constant case and asssigned to the [user environment (process.env)](https://nodejs.org/api/process.html#process_process_env).
+Jenvcfg combines the concepts of using a .env and a JSON file for configuration. The config file is a JSON file (which allows comments) and is loaded into the [user environment (process.env)](https://nodejs.org/api/process.html#process_process_env) like a .env file. The JSON object gets flattened, then each key is converted into constant case and asssigned to the [user environment (process.env)](https://nodejs.org/api/process.html#process_process_env).
 
 ## Install
 To install jenvcfg execute the following command in your terminal
@@ -17,7 +17,7 @@ Example jenvcfg.json file:
     "port" : 8080,
     "general" : {
         "name" : "example",
-        /*
+        /**
          * Im also allowed wuhuu
          */
         "information" : {
