@@ -41,12 +41,9 @@ function load(configFileName='jenvcfg.json') {
         const jsonConfigObject = JSON.parse(fileContentsWOComments);
         Object.assign(process.env, flattenObject(jsonConfigObject));
 
-        return {
-            success : true
-        };
+        return jsonConfigObject;
     } catch(err){
         return {
-            success : false,
             error : err
         };
     }
