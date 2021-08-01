@@ -11,7 +11,7 @@ To install jenvcfg execute the following command in your terminal
 ## Usage
 
 Example jenvcfg.json file:
-```JSON
+```javascript
 {
     // Hi, im a comment and im allowed
     "port" : 8080,
