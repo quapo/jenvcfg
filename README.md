@@ -11,7 +11,7 @@ To install jenvcfg execute the following command in your terminal
 ## Usage
 
 Example jenvcfg.json file:
-```
+```JSON
 {
     // Hi, im a comment and im allowed
     "port" : 8080,
@@ -30,7 +30,7 @@ Example jenvcfg.json file:
 
 Add the desired lines of code at the beginning of the application to load the configuration file:
 
-```
+```javascript
     // Require the package
     const jenvcfg = require('jenvcfg'):
 
@@ -46,7 +46,7 @@ Add the desired lines of code at the beginning of the application to load the co
 
 The values of the example config file can be accessed via:
 
-```
+```javascript
 // port
 process.env.PORT // 8080
 
@@ -59,3 +59,29 @@ process.env.GENERAL_INFORMATION_TITLE // best config
 // general.information.text
 process.env.GENERAL_INFORMATION_TEXT // this is how it works
 ```
+
+## Documenation
+
+### load
+
+load will load either the optional specified file or default to "jenvcfg.json". Due to the nature of the process.env object all values from the config will be implicitly converted to string (See [process.env](https://nodejs.org/api/process.html#process_process_env) for further information).
+It will return an object containing all new set environment variables. 
+```javascript
+    {
+        PORT : "8080",
+        GENERAL_NAME : "example",
+        GENERAL_INFORMATION_TITLE : "best config",
+        GENERAL_INFORMATION_TEXT : "this is how it works"
+    }
+```
+
+In case of an error an object containing an error key with the error will be returned.
+```javascript
+    {
+        error : Error(...)
+    }
+```
+
+### loadByEnv
+
+loadByEnv will call the load function but will add the NODE_ENV as prefix to the "jenvcfg.json" so that the file "NODE_ENV.jenvcfg.json" will be loaded. If NODE_ENV if not set it will default to "development".
