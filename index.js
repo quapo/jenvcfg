@@ -6,12 +6,12 @@ const singleLineCommentRegex = /\n\s*\/\/.*/gm;
 const multiLineCommentRegex = /\n\s*\/\*[\w\'\s\r\n\*]*\*\//gm;
 
 // Function for flattening an nested object to a 1 layer object 
-function flattenObject(object){
+function flattenObject(object) {
     const flattenedObject = {};
     // Loop through all object keys
     Object.keys(object).forEach((prefixKey) => {
         // Check if element is object
-        if(Object.prototype.toString.call(object[prefixKey]) === '[object Object]'){
+        if(Object.prototype.toString.call(object[prefixKey]) === '[object Object]') {
             // Recursivly flatten Object
             const recFO = flattenObject(object[prefixKey]);
             // Loop through recursivly flattenedObject and add elements to flattenedObject
@@ -28,7 +28,7 @@ function flattenObject(object){
 
 
 // Function for loading a config file
-function load(configFileName='jenvcfg.json'){
+function load(configFileName='jenvcfg.json') {
     try {
         // Read jenvcfg.json file
         const filePath = path.join(process.cwd(), configFileName);
@@ -41,14 +41,19 @@ function load(configFileName='jenvcfg.json'){
         const jsonConfigObject = JSON.parse(fileContentsWOComments);
         Object.assign(process.env, flattenObject(jsonConfigObject));
 
-        return true;
-    } catch(e){
-        throw new Error('Could not load jenvcfg.json: \n' + e.message);
+        return {
+            success : true
+        };
+    } catch(err){
+        return {
+            success : false,
+            error : err
+        };
     }
 }
 
 // Loads file [NODE_ENV].jenvcfg.json.json
-function loadByEnv(){
+function loadByEnv() {
     return load((process.env.NODE_ENV || 'development') + '.jenvcfg.json');
 }
 
