@@ -1,5 +1,5 @@
 interface loadResult {
-    [keys: string] : string | Error;
+    [keys: string] : string | Error | undefined;
     error ?: Error;
 }
 
